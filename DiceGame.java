@@ -25,44 +25,44 @@ public class DiceGame {
 			count++;
 
 		
-			int throwDice = 1 + (int) (Math.random() * 6);
+			int rollDice = 1 + (int) (Math.random() * 6);
 
 	
-			if (throwDice % 2 != 0) {
+			if (rollDice % 2 != 0) {
 				countO++;
 				percentO = (float) (countO / count) * 100;
 				
 			}
 
-			String guess = JOptionPane.showInputDialog("Guess even or odd(e/o):");
+			String guess = JOptionPane.showInputDialog("You are about to roll a Six-Sided Dice. Do you think it will be even or odd(e/o):");
 			select = guess.toUpperCase();
 			switch (select) {
 			case "E":
 
 				countE++;// Tracking percenetage of player guesses EVEN (track#3)
 				percentE = (float) (countE / count) * 100;
-				if (throwDice % 2 == 0) {
+				if (rollDice % 2 == 0) {
 					countWin++;
-					String messege = String.format("dice: %d\n Win\n ", throwDice);
+					String messege = String.format("dice: %d\n Woooo you Win!\n ", rollDice);
 					JOptionPane.showMessageDialog(null, messege);
 					
 					} 
 				
 				else {
-					String messege1 = String.format("dice: %d\n Lose\n ", throwDice);
+					String messege1 = String.format("dice: %d\n You Lose!\n ", rollDice);
 					JOptionPane.showMessageDialog(null, messege1);
 				}
 				break;
 			case "O":
 
-				if (throwDice % 2 == 0) {
-					String messege2 = String.format("dice: %d\n loser\n ", throwDice);
+				if (rollDice % 2 == 0) {
+					String messege2 = String.format("dice: %d\n You lose!\n ", rollDice);
 					JOptionPane.showMessageDialog(null, messege2);
 					
 					
 				} else {
 					countWin++;
-					String messege3 = String.format("dice: %d\n Winner\n ", throwDice);
+					String messege3 = String.format("dice: %d\n Winner\n ", rollDice);
 					JOptionPane.showMessageDialog(null, messege3);
 				}
 				break;
